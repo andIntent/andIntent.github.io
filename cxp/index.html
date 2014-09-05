@@ -51,20 +51,18 @@
   </h3>
     
   <p>
-    <a href="http://nxhx.org/Choicemaking/">Information about others' experiences can help us make better choices</a>.  For example, OpenOutcomes data can be used to augment browsing and buying experiences by annotating resources with the likely concerns of the current user and with aggregate outcome data from other users:
+    Information about others' experiences <a href="http://nxhx.org/Choicemaking/">can help us make better choices</a>.  For example, browsing and buying experiences can be augmented: resources can be annotated with the likely concerns of the current user and with aggregate outcome data from other users:
   <p>
     <img src="amazon-warning.png">
     <img src="chrome-f.jpg">
     <img src="fb-w-lozenge-and-popup.jpg">
   </p>
     
-  <p>It can also be used to make maps of longer term trends to understand human nature and human lives.  For instance, this map shows common migrations between activities:
+  <p>Collective experience data can also be used to make maps of longer term trends to understand human nature and human lives.  For instance, this map shows common migrations between activities:
 
   <p><img src="activities.png"></p>
 
-  <p>We'll be providing javascript includes for making your own annotations, maps, and other visualizations.</p>
-  
-    <p>Data is collected via our "retrospective review" interface, which looks like this:
+  <p>Data is collected via our "retrospective review" interface, which looks like this:
   
   <p><img src="fb-review.png"></p>
 
@@ -99,32 +97,29 @@
     The Experience Graph
   </h3>
   
-  <p> Atop the values taxonomy, the experience graph attempts to record different people's experience with the same values and engagements such that we can learn from one another's experience.  We record three types of positive experienced relationships between values:
+  <p> Atop the values taxonomy, the experience graph attempts to record individuals' experience with various values and engagements, so we can learn from one each other's experience.  We record three types of positive experienced relationships between values:
 
   <ul>
-    <li>WayOf(doing: accomplishment, is: accomplishment) -- e.g., WayOf(doing: 'accomplishment: a quick break', is: 'accomplishment: a walk in a nearby park')</li>
-    <li>EffectOf(doing: accomplishment, is: anyValue) -- e.g., EffectOf(doing: 'accomplishment: a quick break', is: 'experience: feeling relaxed')</li>
-    <li>PerspectiveShift(oldAbandonedValue: anyValue, replacedWith: anyValue) -- e.g., PerspectiveShift(oldAbandonedValue: 'experience: feeling successful', replacedWith: 'experience: feeling loved')</li>
+    <li><b>WaysOfDoing</b>, e.g., "a walk in a nearby park" isWayOfDoing "a quick break" and "a quick break" hasWaysOfDoing "a walk in the park" etc.  This relation implies that, if you've done B you also feel you've done A in a satisfying way.
+    <li><b>LeadIns</b>, things that, in experience, lead to other things.  e.g., "creating an event on facebook" isLeadInFor "hosting a potluck", and "hosting a potluck" hasLeadIns "creating an event on facebook"
+    <li><b>BetterThans</b>, values where, if we start to care about A, we no longer care about B. e.g.,"feeling relaxed" isBetterThan "mindless reading" and "mindless reading" hasBetterThans "feeling relaxed".</li>
   </ul>
   
   <p>We also record negative and in-progress experience.</p>
   
   <ul>
-    <li>Unhelpful(doing: accomplishment, for: anyValue)</li>
-    <li>Investigating(doing: accomplishment, for: anyValue)</li>
+    <li><b>Distractions</b>, e.g., "using facebook" isDistractionFor "feeling relaxed" and "feeling relaxed" hasDistractions "using facebook"</li>
+    <li><b>Experiments</b>, something you are still exploring. E.g., "meditation" isExperimentFor "feeling relaxed" and "feeling relaxed" hasExperiments "meditation" </li>
   </ul>
   
+  <p>Here's what one individual's experience looks like within the graph:</p>
   
-  <p> The core object types are Resources, Values, People, Concerns, Engagements, and Outcomes.  A <em>resource</em> is a thing (an app, a product, a venue, etc) that someone could engage with.  An <em>engagement</em> is a purchase, a use-over-time, or other information about how a person has tried a resource.  A <em>value</em> is a thing a person might hope to get out of such an engagement.  A <em>concern</em> is a representation of an ongoing interest in a value by a particular person, and an <em>outcome</em> is whether a particular concern worked out for a particular person during a particular engagement with a particular resource.
-    
-  <p> Here is example data for the core types:
+  <p><script src="https://gist.github.com/jxe/7a78f8e1aa91988de040.js?file=experience.cson"></script></p>
+ 
+  <p>Our database also contains metadata for resources and for users:
 
   <p><script src="https://gist.github.com/jxe/7a78f8e1aa91988de040.js?file=core-types.cson"></script></p>
  
-  <p> Our indexer provides higher level views of some of this data:</p>
-    
-  <p><script src="https://gist.github.com/jxe/7a78f8e1aa91988de040.js?file=aggregations.cson"></script></p>
-    
 </section>
 
 
@@ -154,7 +149,7 @@
   </p>
   
     <p>
-   Advisors and initial funders of the OpenOutcomes project will be revealed shortly.  The project is managed by <a href="mailto:joe@nxhx.org">Joe Edelman</a>, and exists to enable a new generation of <a href="http://nxhx.org/Choicemaking/">choicemaking interfaces</a> that take structured-data wisdom into account, support a notion of <em>time well spent</em>, and create the hard metrics that will allow our devices to respect our lives.
+   Advisors and initial funders of the Collective Experience Project will be revealed shortly.  The project is managed by <a href="mailto:joe@nxhx.org">Joe Edelman</a>, and exists to enable a new generation of <a href="http://nxhx.org/Choicemaking/">choicemaking interfaces</a> that take structured-data wisdom into account, support a notion of <em>time well spent</em>, and create the hard metrics that will allow our devices to respect our lives.
   </p>
   
  
