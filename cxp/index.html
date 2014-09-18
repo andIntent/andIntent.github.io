@@ -97,19 +97,19 @@
     The Experience Graph
   </h3>
   
-  <p> Atop the values taxonomy, the experience graph attempts to record individuals' experience with various values and engagements, so we can learn from one another's experience.  We record three types of positive experienced relationships between values:
+  <p> Atop the values taxonomy, the experience graph attempts to record individuals' experience with various values and engagements, so we can learn from one another.  We record two types of positive experienced relationships between values:
 
   <ul>
-    <li><b>WaysOfDoing</b>, e.g., "a walk in a nearby park" isWayOfDoing "a quick break" and "a quick break" hasWaysOfDoing "a walk in the park" etc.  This relation implies that, if you've done B you also feel you've done A in a satisfying way.
-    <li><b>LeadIns</b>, things that, in experience, lead to other things.  e.g., "creating an event on facebook" isLeadInFor "hosting a potluck", and "hosting a potluck" hasLeadIns "creating an event on facebook"
-    <li><b>BetterThans</b>, values where, if we start to care about A, we no longer care about B. e.g.,"feeling relaxed" isBetterThan "mindless reading" and "mindless reading" hasBetterThans "feeling relaxed".</li>
+    <li><b>/satisfiers</b>, e.g., "a walk in a nearby park"/satisfies might include "a quick break" and "a quick break"/satisfiers might include "a walk in the park" etc.  This relation implies that, if you've done B you also feel you've done A in a satisfying way.
+    <li><b>/outcomes</b>, things that, in experience, lead to other things.  e.g., "creating an okcupid profile"/outcomes includes "going on dates" and "going on dates"/outcomeof "creating an okcupid profile"
   </ul>
   
   <p>We also record negative and in-progress experience.</p>
   
   <ul>
-    <li><b>Distractions</b>, e.g., "using facebook" isDistractionFor "feeling relaxed" and "feeling relaxed" hasDistractions "using facebook"</li>
-    <li><b>Experiments</b>, something you are still exploring. E.g., "meditation" isExperimentFor "feeling relaxed" and "feeling relaxed" hasExperiments "meditation" </li>
+    <li><b>/nonsatisfiers</b>, e.g., "using facebook"/doesntsatisfy "feeling relaxed" and "feeling relaxed"/nonsatisfiers "using facebook".</li>
+    <li><b>/nonoutcomes</b>, e.g., "true love"/notoutcomeof "going on dates" and "going on dates"/nonoutcomes "true love"</li>
+    <li><b>/experiments</b>, something you are still exploring. E.g., "meditation"/tryingfor "feeling relaxed" and "feeling relaxed"/experiments "meditation" </li>
   </ul>
   
   <p>Here's what one individual's experience looks like within the graph:</p>
