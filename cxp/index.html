@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="apple-touch-icon-precomposed" href="/signpost-white.png" />
 <link rel="stylesheet" href="onepage.css">
 
@@ -7,7 +7,6 @@
 <section class="centered">
   <img src="signpost.png">
   <h1>Collective Experience Project</h1>
-<!--  <h2>gathering and organizing <b>collective wisdom</b> online</h2>-->
   
   <p>
   We publish open, structured data about <em>what people try</em> and <em>how it works out for them</em>.  Use our data (instead of five-star reviews or engagement metrics) to recommend products, apps, venues, or anything else humans try.
@@ -32,12 +31,6 @@
       <div class="circle" style="background-image: url(residents.png)"></div>
       <h3>Get Involved</h3>
     </a>
-<!--
-    <a href="#foundation">
-      <div class="circle" style="background-image: url(oversight.png)"></div>
-      <h3>Foundation</h3>
-    </a>
--->
   </div>
   
 </section>
@@ -66,7 +59,7 @@
   
   <p><img src="fb-review.png"></p>
 
-  <p>We are planning to collect 50,000 of these retrospective reviews in the next few months--mostly about apps and websites, but also about other resources which helped people pursue the same values.  These reviews ask questions like:  (a) what apps and websites and products have you used a lot?  (b) what was the choice to use that app about for you?  (e.g., for okcupid, "finding love": answers are normalized across repondents);  (c) did those desires work out with this app/website/product?; (d) if yes, how does it fit into your life now (schedule of use, etc);  and (e) if no, did something else help you with that? ("finding love").
+  <p>We are planning to collect these retrospective reviews in the next few months--mostly about apps and websites, but also about other resources which helped people pursue the same values.  These reviews ask questions like:  (a) what apps and websites and products have you used a lot?  (b) what was the choice to use that app about for you?  (e.g., for okcupid, "finding love": answers are normalized across repondents);  (c) did those desires work out with this app/website/product?; (d) if yes, how does it fit into your life now (schedule of use, etc);  and (e) if no, did something else help you with that? ("finding love").
 
   <p>At conclusion of the project we will make our dataset available as JSON and via other means under an open license. 
 </section>
@@ -87,7 +80,7 @@
   
   <p><script src="https://gist.github.com/jxe/7a78f8e1aa91988de040.js?file=values.cson"></script></p>
 
-  <p>In our schema, values are called "goods" and are organized according to how their attainment is verified.  Goals ('going to college') and lifestyle components ('cooking regularly') are considered <i>activities</i> because they can be checked via calendar entries.  Codes of honor ('acting courageously') and internal capacities ('good judgement') are considered <i>recognitions</i> because they involve an internal evaluation.  Physical goods ('a car') and external infrastructure ('good friends') are considered <i>equipment</i>.  Finally, sensations ('feeling relaxed') and aesthetic judgements ('simplicity') are considered <i>impressions</i>, because they are entirely subjective.  Together, these cover the range of what most people value and pursue.
+  <p>In our schema, the good things in life are called "prizes" (because the word 'value' is overloaded in computer science) and are organized according to how software might check in with the user about how he/she is doing with them.  Goals ('going to college') and lifestyle components ('cooking regularly') are considered <i>activities</i> because they can be checked via calendar entries and location.  Codes of honor ('acting courageously') and internal capacities ('good judgement') are called <i>recognitions</i> because they involve an internal evaluation.  Physical goods ('a car') and external infrastructure ('good friends') are considered <i>equipment</i>.  Finally, sensations ('feeling relaxed') and aesthetic judgements ('simplicity') are considered <i>impressions</i>, because they are occur in time, in the mind.  Together, these cover the range of what most people value and pursue.
 
 </section>
 <section id="experience">
@@ -97,19 +90,16 @@
     The Experience Graph
   </h3>
   
-  <p> Atop the values taxonomy, the experience graph attempts to record individuals' observations of how engagements around various values went, so we can learn from one another.  We record four types of positive experienced relationships between values:
+  <p> Atop the values taxonomy, the collective experience graph attempts to record individuals' observations of how valuable things relate to one another.  It concerns questions like "Does person P pursue activity A because of a deeper value, B?" and "Through what activities, equipment, etc is abstract value A expressed in people's lives?" and "How has the pursuit of A through B worked out for people?".  We record four types of observed relationships between valuable things:<p>
 
   <ul>
-    <li><b>/satisfies</b>, e.g., "a walk in a nearby park"/satisfies might include "a quick break".  This relation implies that, if you've done A you also feel you've done B in a satisfying way.
-    <li><b>/leadsto</b>, things that, in experience, lead to other things.  e.g., "creating an okcupid profile"/leadsto "going on dates"
-    <li><b>/trumps</b>, expresses a preference that eclipses a different opportunity related to the same desires.  e.g., "campfire storytelling"/trumps "going out drinking"
+    <li><b>/delivers</b>, things that, in the experience of a person, lead to other things.  e.g., "creating an okcupid profile"/delivers "going on dates"
+    <li><b>/drives</b>, an assertion that, for a particular person, the first value has driven engagements with the second thing. E.g., "feeling relaxed"/drives "meditation"  </li>
+    <li><b>/comprisedof</b>, expresses success, for a person, in living out the first value through a basket of values including the second value.  e.g., "being a good friend"/comprisedof "listening well"
+    <li><b>/trumps</b>, signals that, in the experience of a person, once the first value was recognized or pursuable, the second value seemed wholly less meaningful.  e.g., "campfire storytelling"/trumps "going out drinking"
   </ul>
   
-  <p>We also record in-progress experience.</p>
-  
-  <ul>
-    <li><b>/drives</b>, something you are exploring for a reason. E.g., "feeling relaxed"/drives "meditation"  </li>
-  </ul>
+  <p>Any of these relations may be negated, and they may be combined.  For instance, if A drives B but B is observed to not deliver A, then we can assume that B was a distraction on the path to A for the reporting individual P.  For any individual, circular or inconsistent relations are not allowed.  The four relations are not orthogonal, and certain combinations are disallowed.  See src/observations.coffee for the rules.</p>
   
   <p>Here's what one individual's experience looks like within the graph:</p>
   
@@ -139,7 +129,7 @@
   
   <p>We've raised funds for <b>a series of 2-3 week residencies for information designers and journalists</b>, who will be asked to create the first stories and navigable web-based exploration experiences from this rather unique structured data source.   This is the first on-reflection structured data about human lives and experiences -- stories about how people's activities and goals change as they live, and which goals and activities they wish they had known about sooner, and so on.
 
-  <p>Residencies for these visiting designers / data visualizers / data storytellers will be during Sep/Oct/Nov/Dec 2014.  By this time, a substantial database of reviews will have been collected, and your job will be to tell one compelling story from that data that is relevant for people's lives.  You might focus on areas like fitness, love, cities, quality time with friends, career changes, etc.
+  <p>Residencies for these visiting designers / data visualizers / data storytellers will be during Jan/Feb/Mar/Apr 2014.  By this time, a substantial database of reviews will have been collected, and your job will be to tell one compelling story from that data that is relevant for people's lives.  You might focus on areas like fitness, love, cities, quality time with friends, career changes, etc.
 
   <p>Each designer / datavisualizer / storyteller will produce a web experiment thing that will go into an online gallery, which we hope will feel kind of like Bostock's bl.ocks.org and like okcupid's OkTrends blog, but focused on this database of collective wisdom about life choices, desires, and outcomes.  Some of these web experiments will be explorable interfaces and some will be more like blog posts or stories with interactive elements.  Each designer will have the assistance of a query person to help them extract just the info they need and to keep their statistical claims in check, and *some* help from a frontend person if they need it.  We're looking mostly here for people who can take a JSON file and make a beautiful compelling exploratory experience that works on the web.  So familiarity with either d3.js or raphaeljs etc etc, and a portfolio with some of these kinds of works.  And above all a sense of beauty and humanity.
 
